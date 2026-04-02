@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>貝諾仁波切心要開示 · Heart Teaching · Penor Rinpoche</title>
+<style>
+:root {
+  --ink:       #1a1209;
+  --parchment: #fdf6e8;
+  --gold:      #b8860b;
+  --gold-lt:   #d4a843;
+  --gold-pale: #f5e8c0;
+  --crimson:   #8b1a1a;
+  --lapis:     #1a3a5c;
+  --mist:      #e8dfc8;
+  --shadow:    rgba(26,18,9,0.15);
+  --radius:    12px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family: Arial,'Noto Sans TC',sans-serif;
+  font-size:18px;
+  background:var(--parchment);
+  color:var(--ink);
+  line-height:1.75;
+}
+
+/* ── HEADER ── */
+.site-header{
+  background: linear-gradient(160deg,#0d1f35 0%,var(--lapis) 60%,#0d2540 100%);
+  color:#fff;
+  padding:36px 20px 32px;
+  text-align:center;
+  border-bottom:3px solid var(--gold);
+}
+.header-inner{
+  max-width:680px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+}
+.header-photo-wrap{
+  width:140px;height:140px;
+  border-radius:50%;
+  border:3px solid var(--gold);
+  overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,0.45);
+  flex-shrink:0;
+}
+.header-photo{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.header-text h1{
+  font-size:clamp(26px,7vw,38px);
+  color:var(--gold-lt);
+  letter-spacing:.04em;
+  line-height:1.25;
+  margin-bottom:6px;
+}
+.header-text h1 span{
+  display:block;
+  font-size:clamp(16px,4vw,22px);
+  color:#c8d8e8;
+  font-style:italic;
+  letter-spacing:.06em;
+  margin-top:4px;
+}
+.teacher-badge{
+  font-size:17px;
+  color:var(--gold-pale);
+  margin:6px 0 8px;
+  letter-spacing:.03em;
+}
+.meta-line{font-size:14px;color:#a8c0d0;line-height:1.6;}
+.meta-url{color:var(--gold-lt);text-decoration:none;}
+.meta-url:hover{text-decoration:underline;}
+
+/* ── NAV ── */
+.toc-nav{
+  position:sticky;top:0;z-index:99;
+  background:var(--lapis);
+  border-bottom:2px solid var(--gold);
+  padding:0;
+  overflow-x:auto;
+  white-space:nowrap;
+}
+.toc-nav::-webkit-scrollbar{height:3px;}
+.toc-nav::-webkit-scrollbar-thumb{background:var(--gold);}
+.toc-inner{
+  display:inline-flex;
+  gap:0;
+  min-width:100%;
+  justify-content:center;
+}
+.toc-btn{
+  font-size:22px;
+  font-weight:500;
+  color:#c8d8e8;
+  background:none;border:none;
+  padding:12px 18px;
+  cursor:pointer;
+  transition:background .2s,color .2s;
+  white-space:nowrap;
+  border-right:1px solid rgba(255,255,255,0.1);
+}
+.toc-btn:last-child{border-right:none;}
+.toc-btn:hover{background:rgba(184,134,11,.2);color:var(--gold-lt);}
+
+/* ── VIDEO ── */
+.video-section{
+  background:#0a0f1a;
+  padding:24px 16px;
+}
+.video-wrapper{
+  max-width:720px;
+  margin:0 auto;
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 8px 32px rgba(0,0,0,0.6);
+}
+.video-wrapper iframe{
+  position:absolute;top:0;left:0;
+  width:100%;height:100%;
+  border:none;
+}
+
+/* ── LANG TOGGLE ── */
+.lang-toggle-bar{
+  background:var(--lapis);
+  padding:10px 16px;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  border-bottom:1px solid var(--gold);
+}
+.lang-btn{
+  font-size:14px;
+  padding:6px 18px;
+  border-radius:20px;
+  border:1.5px solid var(--gold);
+  background:transparent;
+  color:var(--gold-lt);
+  cursor:pointer;
+  transition:all .2s;
+}
+.lang-btn.active,.lang-btn:hover{
+  background:var(--gold);
+  color:#fff;
+}
+
+/* ── SECTIONS ── */
+.content-section{
+  max-width:800px;
+  margin:0 auto;
+  padding:32px 18px;
+}
+.section-heading{
+  font-size:clamp(18px,5vw,24px);
+  color:var(--lapis);
+  border-left:4px solid var(--gold);
+  padding-left:14px;
+  margin-bottom:20px;
+  letter-spacing:.03em;
+}
+.section-divider{
+  border:none;
+  border-top:1px solid var(--mist);
+  margin:8px 0 32px;
+}
+
+/* ── TIMESTAMPS ── */
+.ts-list{display:flex;flex-direction:column;gap:10px;}
+.ts-item{
+  display:grid;
+  grid-template-columns:64px 1fr 1fr;
+  gap:8px 12px;
+  align-items:start;
+  background:#fff;
+  border-radius:var(--radius);
+  padding:12px 14px;
+  box-shadow:0 1px 6px var(--shadow);
+  border-left:3px solid var(--gold);
+  transition:box-shadow .2s, transform .15s;
+}
+.ts-item:hover{box-shadow:0 4px 16px var(--shadow);transform:translateX(2px);}
+.ts-time{
+  font-size:12px;
+  font-weight:700;
+  color:var(--gold);
+  background:var(--gold-pale);
+  border-radius:6px;
+  padding:4px 6px;
+  text-align:center;
+  align-self:center;
+  letter-spacing:.03em;
+}
+.ts-en{font-size:15px;color:#2a4060;line-height:1.55;font-style:italic;}
+.ts-zh{font-size:17px;color:var(--ink);line-height:1.55;}
+
+/* ── SUMMARY ── */
+.dharma-section{
+  margin-bottom:28px;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 2px 12px var(--shadow);
+}
+.dharma-section-title{
+  font-size:clamp(15px,4.5vw,19px);
+  background:var(--lapis);
+  color:var(--gold-lt);
+  padding:12px 18px;
+  letter-spacing:.04em;
+}
+.bilingual-panel{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+}
+@media(max-width:600px){.bilingual-panel{grid-template-columns:1fr;}}
+.lang-col{padding:18px;}
+.lang-col.en-col{background:#f0f4f8;border-right:1px solid var(--mist);}
+.lang-col.zh-col{background:#fffdf5;}
+.lang-flag{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  color:var(--gold);
+  margin-bottom:8px;
+  text-transform:uppercase;
+}
+.lang-col p{font-size:18px;line-height:1.8;color:var(--ink);}
+
+/* ── KEY POINTS ── */
+.keypoints-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+@media(max-width:560px){.keypoints-grid{grid-template-columns:1fr;}}
+.key-point-card{
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:0 1px 8px var(--shadow);
+  border-top:3px solid var(--gold);
+  overflow:hidden;
+}
+.kp-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:80px;
+}
+@media(max-width:560px){.kp-inner{grid-template-columns:1fr;}}
+.kp-en{
+  font-size:14px;
+  font-style:italic;
+  color:#2a4060;
+  padding:14px;
+  background:#f5f8fc;
+  border-right:1px solid var(--mist);
+  line-height:1.6;
+}
+.kp-zh{
+  font-size:17px;
+  color:var(--ink);
+  padding:14px;
+  line-height:1.6;
+}
+
+/* ── SUMMARY BOX ── */
+.summary-box{
+  background:var(--lapis);
+  color:#fff;
+  border-radius:var(--radius);
+  padding:24px 20px;
+  text-align:center;
+  margin:32px 0 0;
+  box-shadow:0 4px 20px var(--shadow);
+}
+.summary-box .sum-zh{
+  font-size:clamp(18px,5vw,22px);
+  color:var(--gold-lt);
+  line-height:1.7;
+  margin-bottom:10px;
+}
+.summary-box .sum-en{
+  font-size:clamp(14px,3.5vw,17px);
+  color:#b8cce0;
+  font-style:italic;
+  line-height:1.7;
+}
+
+/* ── FOOTER ── */
+.site-footer{
+  background:#0d1f35;
+  color:#8aabb8;
+  text-align:center;
+  padding:28px 16px;
+  font-size:14px;
+  border-top:2px solid var(--gold);
+  line-height:1.9;
+}
+.site-footer a{color:var(--gold-lt);text-decoration:none;}
+
+/* ── BACK TO TOP ── */
+#backTop{
+  position:fixed;bottom:22px;right:18px;
+  width:44px;height:44px;
+  background:var(--lapis);
+  border:2px solid var(--gold);
+  border-radius:50%;
+  color:var(--gold-lt);
+  font-size:20px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  opacity:0;pointer-events:none;
+  transition:opacity .3s;
+  box-shadow:0 2px 12px rgba(0,0,0,0.3);
+  z-index:200;
+  text-decoration:none;
+}
+#backTop.show{opacity:1;pointer-events:auto;}
+
+/* ── FADE IN ── */
+.fade-in{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
+.fade-in.visible{opacity:1;transform:none;}
+
+/* ── LANG SWITCH CSS ── */
+body.zh-only .en-col{display:none;}
+body.zh-only .bilingual-panel{grid-template-columns:1fr;}
+body.zh-only .kp-en{display:none;}
+body.zh-only .kp-inner{grid-template-columns:1fr;}
+body.zh-only .ts-en{display:none;}
+body.zh-only .ts-item{grid-template-columns:64px 1fr;}
+
+body.en-only .zh-col{display:none;}
+body.en-only .bilingual-panel{grid-template-columns:1fr;}
+body.en-only .kp-zh{display:none;}
+body.en-only .kp-inner{grid-template-columns:1fr;}
+body.en-only .ts-zh{display:none;}
+body.en-only .ts-item{grid-template-columns:64px 1fr;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:480px){
+  .ts-item{grid-template-columns:54px 1fr 1fr;}
+  .content-section{padding:24px 14px;}
+  .toc-btn{font-size:14px;padding:10px 13px;}
+}
+</style>
+</head>
+<body class="zh-only">
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-photo-wrap">
+      <img class="header-photo" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Penor_Rinpoche.jpg" alt="貝諾仁波切" loading="lazy">
+    </div>
+    <div class="header-text">
+      <h1>貝諾仁波切心要開示<span>Heart Teaching · Penor Rinpoche</span></h1>
+      <p class="meta-line">
+        北美白玉閉關中心 · Palyul Retreat Center · 2005<br>
+        <a class="meta-url" href="https://youtu.be/1wuCCwQ8dzA" target="_blank">youtu.be/1wuCCwQ8dzA</a>
+      </p>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="toc-nav" role="navigation">
+  <div class="toc-inner">
+    <button class="toc-btn" onclick="navScrollTo('video')">影片</button>
+    <button class="toc-btn" onclick="navScrollTo('timestamps')">時間戳記</button>
+    <button class="toc-btn" onclick="navScrollTo('summary')">開示摘要</button>
+    <button class="toc-btn" onclick="navScrollTo('keypoints')">核心要點</button>
+  </div>
+</nav>
+
+<!-- VIDEO -->
+<section class="video-section" id="video">
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube.com/embed/1wuCCwQ8dzA"
+      title="貝諾仁波切心要開示 Heart Teaching Penor Rinpoche"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<!-- LANG TOGGLE -->
+<div class="lang-toggle-bar">
+  <button class="lang-btn" id="btn-both" onclick="setLang('both')">中英 Both</button>
+  <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">中文</button>
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">English</button>
+</div>
+
+<!-- TIMESTAMPS -->
+<section id="timestamps" style="background:var(--parchment);padding:8px 0 4px;">
+  <div class="content-section">
+    <h2 class="section-heading">時間戳記</h2>
+    <hr class="section-divider">
+    <div class="ts-list">
+
+      <div class="ts-item fade-in"
+           data-url="https://www.youtube.com/embed/1wuCCwQ8dzA?start=0&autoplay=1"
+           onclick="openTS(this)" style="cursor:pointer;">
+        <div class="ts-time">00:00</div>
+        <div class="ts-en">Supplication to Guru (Seven-Line Prayer); warning against ego and pride</div>
+        <div class="ts-zh">向蓮師祈請（七句祈請文）；警示我慢與自大之過</div>
+      </div>
+
+      <div class="ts-item fade-in"
+           data-url="https://www.youtube.com/embed/1wuCCwQ8dzA?start=98&autoplay=1"
+           onclick="openTS(this)" style="cursor:pointer;">
+        <div class="ts-time">01:38</div>
+        <div class="ts-en">Worldly knowledge and technology cannot liberate from samsara</div>
+        <div class="ts-zh">世間科學知識與技術無法使人解脫輪迴</div>
+      </div>
+
+      <div class="ts-item fade-in"
+           data-url="https://www.youtube.com/embed/1wuCCwQ8dzA?start=173&autoplay=1"
+           onclick="openTS(this)" style="cursor:pointer;">
+        <div class="ts-time">02:53</div>
+        <div class="ts-en">Seed analogy: Buddha nature as the potential within needing conditions to grow</div>
+        <div class="ts-zh">種子喻：佛性為內在潛能，需依緣成長</div>
+      </div>
+
+      <div class="ts-item fade-in"
+           data-url="https://www.youtube.com/embed/1wuCCwQ8dzA?start=255&autoplay=1"
+           onclick="openTS(this)" style="cursor:pointer;">
+        <div class="ts-time">04:15</div>
+        <div class="ts-en">Enlightenment is revealing inherent qualities, not gaining something new</div>
+        <div class="ts-zh">覺悟是顯現本具功德，而非獲得新物</div>
+      </div>
+
+      <div class="ts-item fade-in"
+           data-url="https://www.youtube.com/embed/1wuCCwQ8dzA?start=279&autoplay=1"
+           onclick="openTS(this)" style="cursor:pointer;">
+        <div class="ts-time">04:39</div>
+        <div class="ts-en">Sun &amp; cloud analogy: Obscurations hiding the innate sun-like qualities</div>
+        <div class="ts-zh">日雲比喻：障礙遮蔽了如日般的本具功德</div>
+      </div>
+
+      <div class="ts-item fade-in"
+           data-url="https://www.youtube.com/embed/1wuCCwQ8dzA?start=319&autoplay=1"
+           onclick="openTS(this)" style="cursor:pointer;">
+        <div class="ts-time">05:19</div>
+        <div class="ts-en">Purifying obscurations through merit, wisdom, and deity practice</div>
+        <div class="ts-zh">透過福慧資糧與本尊修持淨化障礙</div>
+      </div>
+
+      <div class="ts-item fade-in"
+           data-url="https://www.youtube.com/embed/1wuCCwQ8dzA?start=374&autoplay=1"
+           onclick="openTS(this)" style="cursor:pointer;">
+        <div class="ts-time">06:14</div>
+        <div class="ts-en">Maintain pure view and perception based on absolute reality</div>
+        <div class="ts-zh">保持基於勝義實相的清淨見與清淨觀</div>
+      </div>
+
+      <div class="ts-item fade-in"
+           data-url="https://www.youtube.com/embed/1wuCCwQ8dzA?start=465&autoplay=1"
+           onclick="openTS(this)" style="cursor:pointer;">
+        <div class="ts-time">07:45</div>
+        <div class="ts-en">Doubt and hesitation are like a net trapping the practitioner</div>
+        <div class="ts-zh">疑慮與猶豫如羅網，困陷修行者</div>
+      </div>
+
+      <div class="ts-item fade-in"
+           data-url="https://www.youtube.com/embed/1wuCCwQ8dzA?start=499&autoplay=1"
+           onclick="openTS(this)" style="cursor:pointer;">
+        <div class="ts-time">08:19</div>
+        <div class="ts-en">Merging body, speech, mind with Guru's mind; rest in non-dual nature</div>
+        <div class="ts-zh">身語意融入上師覺心；安住於無二本性</div>
+      </div>
+
+      <div class="ts-item fade-in"
+           data-url="https://www.youtube.com/embed/1wuCCwQ8dzA?start=559&autoplay=1"
+           onclick="openTS(this)" style="cursor:pointer;">
+        <div class="ts-time">09:19</div>
+        <div class="ts-en">Yeast analogy: Guru's mind as the catalyst for realization; rest in meditation</div>
+        <div class="ts-zh">酵母喻：上師覺心為證悟之催化劑；安住禪定</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section id="summary" style="background:#f2ede0;padding:8px 0 4px;">
+  <div class="content-section">
+    <h2 class="section-heading">開示摘要</h2>
+    <hr class="section-divider">
+
+    <div class="dharma-section fade-in">
+      <div class="dharma-section-title">一、祈請與放下自我 · Supplication &amp; Releasing Ego</div>
+      <div class="bilingual-panel">
+        <div class="lang-col en-col">
+          <div class="lang-flag">English</div>
+          <p>Always carry through this seven-line prayer of supplication to Guru and not to think that I'm great, I'm powerful or just thinking about one's own ego. We actually don't have a tiny bit of real qualities.</p>
+        </div>
+        <div class="lang-col zh-col">
+          <div class="lang-flag">中文</div>
+          <p>貝諾仁波切開示時，首先教導修行者應時時以七支供向蓮師祈請。他說：我們絕不可認為「我很偉大」或「我很有力量」，因為實際上我們連一絲一毫真正的功德都沒有。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dharma-section fade-in">
+      <div class="dharma-section-title">二、世間知識的局限 · The Limits of Worldly Knowledge</div>
+      <div class="bilingual-panel">
+        <div class="lang-col en-col">
+          <div class="lang-flag">English</div>
+          <p>Whatever these qualities or sense of knowledge we have in relation with all these scientific methods and technologies of the worldly material, that will never become a cause-condition to liberate from the suffering of samsara. And all these material belongings become just condition that which bind ourselves into the samsara.</p>
+        </div>
+        <div class="lang-col zh-col">
+          <div class="lang-flag">中文</div>
+          <p>我們所擁有的關於世間物質的科學方法與技術的任何功德或知識，永遠不會成為從輪迴痛苦中解脫的因緣。所有這些物質財產僅僅成為將我們束縛於輪迴的條件。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dharma-section fade-in">
+      <div class="dharma-section-title">三、佛性與種子喻 · Buddha Nature &amp; The Seed Analogy</div>
+      <div class="bilingual-panel">
+        <div class="lang-col en-col">
+          <div class="lang-flag">English</div>
+          <p>The inner quality we have as our primordial nature is the enlightened qualities that whatever Buddha has. We have that potential, the Buddha nature, as a real seed. Like any fruit seed, with water, soil, and nurturing, it grows into a big tree with fruits that we can utilize. If there is no seed, no matter how many conditions you assemble, nothing really happens.</p>
+        </div>
+        <div class="lang-col zh-col">
+          <div class="lang-flag">中文</div>
+          <p>我們作為本初自性（primordial nature）所擁有的內在功德，就是佛所擁有的覺悟功德。我們擁有這份潛能，即佛性，作為真實的種子。正如任何果實的種子，有了水、土和照料，它會長成大樹並結出我們可以利用的果實。如果沒有種子，無論你聚集多少因緣，什麼都不會真正發生。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dharma-section fade-in">
+      <div class="dharma-section-title">四、日雲比喻與淨化 · Sun &amp; Cloud Analogy &amp; Purification</div>
+      <div class="bilingual-panel">
+        <div class="lang-col en-col">
+          <div class="lang-flag">English</div>
+          <p>When we obtain enlightenment or buddhahood, it is not like that we obtain something new, it is just merely that the qualities what we have in our nature are accomplished or arisen. Like the sunshine hidden by clouds, we do practices to accumulate merit and wisdom and deity practices to purify the obscuration so the quality we have like the sunshine could be arisen.</p>
+        </div>
+        <div class="lang-col zh-col">
+          <div class="lang-flag">中文</div>
+          <p>當我們獲得覺悟或佛果時，並非獲得了什麼新事物，僅僅是我們本性中擁有的功德得以成就或顯發。如同被雲遮蔽的陽光，我們透過積累福德、智慧與本尊修持來淨化障礙，使我們本具如陽光般的功德得以顯現。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dharma-section fade-in">
+      <div class="dharma-section-title">五、清淨觀與輪迴本質 · Pure Perception &amp; Nature of Samsara</div>
+      <div class="bilingual-panel">
+        <div class="lang-col en-col">
+          <div class="lang-flag">English</div>
+          <p>Maintain the pure view and pure perception, devotion and faith. Pure perception is based on the absolute reality. Not to have too much attachment and grasping within this samsara; try to understand that the samsara is effortless. Don't have all sorts of doubts or hesitation, because these are like a net that one cannot liberate out of it.</p>
+        </div>
+        <div class="lang-col zh-col">
+          <div class="lang-flag">中文</div>
+          <p>保持清淨的見地與清淨的觀照，以及虔誠與信心。清淨的觀照，是建立在究竟實相之上的。在輪迴中不要有太多的執著與抓取；試著去理解輪迴是無勞的（effortless）。不要有各種疑慮或猶豫，因為這些就像一張羅網，讓人無法從中解脫。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dharma-section fade-in">
+      <div class="dharma-section-title">六、融入大師覺心與酵母喻 · Merging with Guru's Mind &amp; Yeast Analogy</div>
+      <div class="bilingual-panel">
+        <div class="lang-col en-col">
+          <div class="lang-flag">English</div>
+          <p>With one's body, speech, mind together, completely devoted to the guru who is the condensed nature of all the past, present, and future, and then try to abide in the absolute nature where there is a non-duality of one's mind with the guru's enlightened mind without any conceptualizing or fabricating. The condensed nature of all the buddhas in form of the enlightened guru's mind is like a yeast that which apply within your being, and through that to receive the blessing.</p>
+        </div>
+        <div class="lang-col zh-col">
+          <div class="lang-flag">中文</div>
+          <p>以這樣的方式，讓自己的身、語、意三者合一，全然投入於上師——他是過去、現在與未來一切諸佛的凝聚本質。接著，嘗試安住於究竟實相之中，在那裡，自己的心與上師覺悟之心無二無別，不加任何概念分別，也不作任何造作，並安住於心的本性之中。<br><br>這就像釀造某些酒一樣：當條件具足之後，加入酵母，讓它自然發酵完成。同樣地，過去、現在與未來一切諸佛的精華，以覺悟上師之心的形式呈現，如同酵母一般，作用於你的內在，並藉此領受加持，然後安住於禪修之中。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- One-line summary -->
+    <div class="summary-box fade-in">
+      <div class="sum-zh">佛性本已具足，一切修行皆為淨化遮蔽，讓如日般的本有覺性自然顯現。</div>
+      <div class="sum-en">Buddha nature is already complete within us. All practice serves to clear obscurations so our innate sun-like awareness naturally shines forth.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- KEY POINTS -->
+<section id="keypoints" style="background:var(--parchment);padding:8px 0 32px;">
+  <div class="content-section">
+    <h2 class="section-heading">核心要點</h2>
+    <hr class="section-divider">
+    <div class="keypoints-grid">
+
+      <div class="key-point-card fade-in">
+        <div class="kp-inner">
+          <div class="kp-en">Carry through the seven-line prayer; release ego and pride</div>
+          <div class="kp-zh">向蓮師祈請；放下自我與傲慢</div>
+        </div>
+      </div>
+
+      <div class="key-point-card fade-in">
+        <div class="kp-inner">
+          <div class="kp-en">Worldly knowledge and technology cannot liberate from samsara</div>
+          <div class="kp-zh">世間知識與技術無法使人從輪迴解脫</div>
+        </div>
+      </div>
+
+      <div class="key-point-card fade-in">
+        <div class="kp-inner">
+          <div class="kp-en">Buddha nature is the potential seed within us</div>
+          <div class="kp-zh">佛性本已圓滿具足</div>
+        </div>
+      </div>
+
+      <div class="key-point-card fade-in">
+        <div class="kp-inner">
+          <div class="kp-en">Obscurations hide innate qualities like clouds hide the sun</div>
+          <div class="kp-zh">障礙遮蔽本具功德，如同雲遮陽光</div>
+        </div>
+      </div>
+
+      <div class="key-point-card fade-in">
+        <div class="kp-inner">
+          <div class="kp-en">Practice merit, wisdom, and deity yoga to clear obscurations</div>
+          <div class="kp-zh">修持福慧與本尊法以淨化障礙</div>
+        </div>
+      </div>
+
+      <div class="key-point-card fade-in">
+        <div class="kp-inner">
+          <div class="kp-en">Maintain pure view and perception based on absolute reality</div>
+          <div class="kp-zh">保持清淨的見地與觀照（基於究竟實相）</div>
+        </div>
+      </div>
+
+      <div class="key-point-card fade-in">
+        <div class="kp-inner">
+          <div class="kp-en">Merge your body, speech, and mind into the Guru's enlightened mind, and abide in meditation.</div>
+          <div class="kp-zh">身語意融入上師覺心，安住於禪修</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>願此開示利益一切眾生<br>
+  <em>May this teaching benefit all sentient beings</em></p>
+  <p><a href="https://youtu.be/1wuCCwQ8dzA" target="_blank">youtu.be/1wuCCwQ8dzA</a></p>
+</footer>
+
+<!-- BACK TO TOP -->
+<a id="backTop" href="#" title="回到頂部">↑</a>
+
+<script>
+function navScrollTo(id) {
+  try {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var navH = document.querySelector('.toc-nav').offsetHeight;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 8;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  } catch(e) {}
+}
+
+function openTS(el) {
+  var url = el.getAttribute('data-url');
+  if (!url) return;
+  var iframe = document.querySelector('.video-wrapper iframe');
+  if (iframe) {
+    iframe.src = url;
+    var navH = document.querySelector('.toc-nav').offsetHeight;
+    var videoEl = document.getElementById('video');
+    var top = videoEl.getBoundingClientRect().top + window.pageYOffset - navH - 8;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
+}
+
+function setLang(mode) {
+  document.body.classList.remove('zh-only', 'en-only');
+  document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('active'); });
+  if (mode === 'zh') {
+    document.body.classList.add('zh-only');
+    document.getElementById('btn-zh').classList.add('active');
+  } else if (mode === 'en') {
+    document.body.classList.add('en-only');
+    document.getElementById('btn-en').classList.add('active');
+  } else {
+    document.getElementById('btn-both').classList.add('active');
+  }
+}
+
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+
+var backTop = document.getElementById('backTop');
+window.addEventListener('scroll', function() {
+  backTop.classList.toggle('show', window.scrollY > 400);
+});
+</script>
+</body>
+</html>
