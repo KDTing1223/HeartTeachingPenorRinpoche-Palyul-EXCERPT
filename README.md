@@ -7,7 +7,7 @@
 
 The teachings and content presented in this repository are offered for personal study only.  
 Unauthorized modification, redistribution, or commercial use is not permitted 
-AI Studio: https://ai.studio/apps/b07f09ce-ad00-49d8-aba7-f65513f5ae0e
+
 
 ## Run Locally
 
