@@ -346,9 +346,25 @@ body.en-only .ts-item{grid-template-columns:64px 1fr;}
 
 /* ── RESPONSIVE ── */
 @media(max-width:480px){
-  .ts-item{grid-template-columns:54px 1fr 1fr;}
+  .ts-item{grid-template-columns:54px 1fr; gap:6px 10px;}
+  .ts-en, .ts-zh { grid-column: 2; } /* Stack in Both mode on mobile */
   .content-section{padding:24px 14px;}
-  .toc-btn{font-size:14px;padding:10px 13px;}
+  .toc-btn{font-size:18px;padding:12px 14px;}
+  .lang-col p{font-size:20px;}
+  .ts-zh{font-size:19px;}
+  .ts-en{font-size:17px;}
+  .kp-zh{font-size:19px;}
+  .kp-en{font-size:16px;}
+  .meta-line{font-size:15px;}
+  .dharma-section-title{font-size:18px;}
+  .site-footer{font-size:15px;}
+  .lang-btn{font-size:15px; padding:8px 20px;}
+  .header-text h1{font-size:28px;}
+  .header-text h1 span{font-size:17px;}
+  .teacher-badge{font-size:18px;}
+  .section-heading{font-size:22px;}
+  .summary-box .sum-zh{font-size:22px;}
+  .summary-box .sum-en{font-size:16px;}
 }
 </style>
 </head>
@@ -374,9 +390,9 @@ body.en-only .ts-item{grid-template-columns:64px 1fr;}
 <nav class="toc-nav" role="navigation">
   <div class="toc-inner">
     <button class="toc-btn" onclick="navScrollTo('video')">影片</button>
-    <button class="toc-btn" onclick="navScrollTo('timestamps')">時間戳記</button>
+    <button class="toc-btn" onclick="navScrollTo('timestamps')">時間標記</button>
     <button class="toc-btn" onclick="navScrollTo('summary')">開示摘要</button>
-    <button class="toc-btn" onclick="navScrollTo('keypoints')">核心要點</button>
+    <button class="toc-btn" onclick="navScrollTo('keypoints')">彙整</button>
   </div>
 </nav>
 
@@ -404,7 +420,7 @@ body.en-only .ts-item{grid-template-columns:64px 1fr;}
 <!-- TIMESTAMPS -->
 <section id="timestamps" style="background:var(--parchment);padding:8px 0 4px;">
   <div class="content-section">
-    <h2 class="section-heading">時間戳記</h2>
+    <h2 class="section-heading">時間標記</h2>
     <hr class="section-divider">
     <div class="ts-list">
 
@@ -414,14 +430,6 @@ body.en-only .ts-item{grid-template-columns:64px 1fr;}
         <div class="ts-time">00:00</div>
         <div class="ts-en">Supplication to Guru (Seven-Line Prayer); warning against ego and pride</div>
         <div class="ts-zh">向蓮師祈請（七句祈請文）；警示我慢與自大之過</div>
-      </div>
-
-      <div class="ts-item fade-in"
-           data-url="https://www.youtube.com/embed/1wuCCwQ8dzA?start=98&autoplay=1"
-           onclick="openTS(this)" style="cursor:pointer;">
-        <div class="ts-time">01:38</div>
-        <div class="ts-en">Worldly knowledge and technology cannot liberate from samsara</div>
-        <div class="ts-zh">世間科學知識與技術無法使人解脫輪迴</div>
       </div>
 
       <div class="ts-item fade-in"
@@ -478,14 +486,6 @@ body.en-only .ts-item{grid-template-columns:64px 1fr;}
         <div class="ts-time">08:19</div>
         <div class="ts-en">Merging body, speech, mind with Guru's mind; rest in non-dual nature</div>
         <div class="ts-zh">身語意融入上師覺心；安住於無二本性</div>
-      </div>
-
-      <div class="ts-item fade-in"
-           data-url="https://www.youtube.com/embed/1wuCCwQ8dzA?start=559&autoplay=1"
-           onclick="openTS(this)" style="cursor:pointer;">
-        <div class="ts-time">09:19</div>
-        <div class="ts-en">Yeast analogy: Guru's mind as the catalyst for realization; rest in meditation</div>
-        <div class="ts-zh">酵母喻：上師覺心為證悟之催化劑；安住禪定</div>
       </div>
 
     </div>
@@ -594,7 +594,7 @@ body.en-only .ts-item{grid-template-columns:64px 1fr;}
 <!-- KEY POINTS -->
 <section id="keypoints" style="background:var(--parchment);padding:8px 0 32px;">
   <div class="content-section">
-    <h2 class="section-heading">核心要點</h2>
+    <h2 class="section-heading">彙整</h2>
     <hr class="section-divider">
     <div class="keypoints-grid">
 
