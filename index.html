@@ -346,9 +346,25 @@ body.en-only .ts-item{grid-template-columns:64px 1fr;}
 
 /* ── RESPONSIVE ── */
 @media(max-width:480px){
-  .ts-item{grid-template-columns:54px 1fr 1fr;}
+  .ts-item{grid-template-columns:54px 1fr; gap:6px 10px;}
+  .ts-en, .ts-zh { grid-column: 2; } /* Stack in Both mode on mobile */
   .content-section{padding:24px 14px;}
-  .toc-btn{font-size:14px;padding:10px 13px;}
+  .toc-btn{font-size:20px;padding:12px 14px;}
+  .lang-col p{font-size:20px;}
+  .ts-zh{font-size:19px;}
+  .ts-en{font-size:17px;}
+  .kp-zh{font-size:19px;}
+  .kp-en{font-size:16px;}
+  .meta-line{font-size:15px;}
+  .dharma-section-title{font-size:18px;}
+  .site-footer{font-size:15px;}
+  .lang-btn{font-size:15px; padding:8px 20px;}
+  .header-text h1{font-size:28px;}
+  .header-text h1 span{font-size:17px;}
+  .teacher-badge{font-size:18px;}
+  .section-heading{font-size:22px;}
+  .summary-box .sum-zh{font-size:22px;}
+  .summary-box .sum-en{font-size:16px;}
 }
 </style>
 </head>
